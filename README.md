@@ -7,3 +7,12 @@
 
 
 
+## Basic parellel I/O
+- 각 compute node가 주어진 데이터들을 개별로 I/O node에 전송하는 방법
+
+## Client-oriented collective I/O 
+- 각 client(compute node)가 주어진 영역의 데이터들을 다른 client로부터 모아서 연속적인 데이터들을 보내는 방법
+
+## Server-oriented collective I/O
+- 각 server(I/O node)가 주어진 영역의 데이터들을 client로부터 모아서 저장하는 방법 
+
