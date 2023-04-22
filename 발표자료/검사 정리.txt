@@ -1,0 +1,63 @@
+==== 실행 ====
+gcc -DTIMES -o 파일이름 파일이름.c
+
+==== 정리 ====
+0) 64KB: 16K의 int
+   128KB: 64k의 int
+
+1) cmpute node의  한 파일의 크기
+64KB : 1024*4*4=16,384 
+128KB : 1024*16*4=65,536
+
+2) io node의 파일의 크기
+- 실행 전: 0 이어야 한다.
+- 실행 후:
+   64KB: 1024*8*4 = 32,768
+   128KB: 1024*32*4 = 131,072
+
+==== compute node ====
+< dump 명령 >
+od -d compute64_0	od -d compute256_0
+od -d compute64_1	od -d compute256_1
+od -d compute64_2	od -d compute256_2
+od -d compute64_3	od -d compute256_3
+
+< 파일 크기  > 
+ls -al compute64_0		ls -al compute256_0
+ls -al compute64_1		ls -al compute256_1
+ls -al compute64_2		ls -al compute256_2
+ls -al compute64_3		ls -al compute256_3
+
+==== io node ====
+< dump 명령 >
+od -d ionode64_0		od -d ionode256_0
+od -d ionode64_1		od -d ionode256_1
+
+< 파일 크기 >
+ls -al ionode64_0		ls -al ionode256_0
+ls -al ionode64_1		ls -al ionode256_1
+
+
+==== io node dump 해서 숫자 확인하기 ====
+1) io node 64KB
+=> [ ] 괄호 안의 line은 dump 했을때 해당 범위의 시작 부분
+     찾기 편하시라고 적어놨어요.
+io node#0	io node#1	시작부분
+0~1023	 	1024~2047	[line 0]
+2048~3071	3072~4095	[line 10000]
+4096~5119	5120~6143	[line 20000]
+6144~7167	7167~8191	[line 30000]
+8192~9215	9216~10239	[line 40000]
+10240~11263	11264~12287	[line 50000]
+12288~13311	13312~14335	[line 60000]
+14336~15359	15360~16383	[line 70000]
+
+2) io node 256KB
+	...
+59392~60415	60416~61439	[line 350000]
+61440~62463	62464~63487	[line 360000]
+63488~64511	64512~65535	[line 370000]
+
+
+
+
