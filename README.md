@@ -5,7 +5,8 @@
 # 프로젝트 소개 
 계산 및 I/O 속도를 높이기 위한 병렬작업(parallel operation)을 구현하기 
 
-![image](https://github.com/PMiseon/Unix_TermProject-2022-2/assets/106222104/4598b6f8-2752-40b3-80d0-af4314f49254)
+![image](https://github.com/PMiseon/Unix_TermProject-2022-2/assets/106222104/186c976b-7ec8-40a0-9f3c-999c6b7d0ad3)
+
 
 
 ## Basic parellel I/O
